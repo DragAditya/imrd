@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMRD Shirpur - Institute of Management Research and Development</title>
+    <meta name="description" content="IMRD Shirpur - Quality Education for Nourishing Tomorrow's IT & Management Professionals since 1997">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #1d1d1f;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --bg-dark: #000000;
+            --border: #d2d2d7;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-heavy: rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 9999;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 1px 3px var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white !important;
+            padding: 6px 16px;
+            border-radius: 980px;
+            opacity: 1 !important;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-hover);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 44px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            padding: 120px 22px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="g"><stop offset="0%25" stop-color="%230071e3" stop-opacity="0.3"/><stop offset="100%25" stop-color="%230071e3" stop-opacity="0"/></radialGradient></defs><circle cx="600" cy="400" r="400" fill="url(%23g)"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            font-size: 19px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 16px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 980px;
+            font-size: 17px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            letter-spacing: -0.2px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 80px 22px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: -2px;
+        }
+
+        .stat-label {
+            font-size: 17px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 22px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .section-eyebrow {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        .section-description {
+            font-size: 21px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-secondary);
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 28px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #000000, #0071e3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            box-shadow: 0 20px 40px var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Courses Section */
+        .courses {
+            background: white;
+        }
+
+        .courses-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 18px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .course-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .course-card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .course-code {
+            display: inline-block;
+            background: var(--bg-secondary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .course-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .course-badge {
+            background: var(--bg-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            background: var(--bg-dark);
+            color: white;
+        }
+
+        .facilities .section-title,
+        .facilities .section-eyebrow {
+            color: white;
+        }
+
+        .facilities .section-description {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .facilities-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .facility-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .facility-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .facility-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .facility-item h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .facility-item p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Placements Section */
+        .placements {
+            background: var(--bg-secondary);
+        }
+
+        .placements-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .placement-card {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .placement-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px var(--shadow);
+        }
+
+        .placement-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00a8ff);
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .placement-card h4 {
+            font-size: 17px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .placement-company {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .placement-package {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .recruiters {
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .recruiters h3 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .recruiters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .recruiter-item {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .recruiter-item:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* Admission Section */
+        .admission {
+            background: white;
+        }
+
+        .admission-steps {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00a8ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 16px rgba(0, 113, 227, 0.3);
+        }
+
+        .step h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .step p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--bg-secondary);
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #000000, var(--accent));
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 32px 24px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .contact-form {
+            background: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 80px 22px 40px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-section h3 {
+            font-size: 17px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 56px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 80px 22px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-description {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .courses-grid,
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">IMRD</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#placements">Placements</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="nav-cta">Apply Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">Since 1997</p>
+            <h1 class="hero-title">Shape Your Future</h1>
+            <p class="hero-description">Quality Education for Nourishing Tomorrow's IT & Management Professionals</p>
+            <div class="hero-cta">
+                <a href="#admission" class="btn btn-primary">Apply Now</a>
+                <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">27+</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Courses Offered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">9.6</div>
+                <div class="stat-label">Highest Package (LPA)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Placement Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about reveal" id="about">
+        <div class="section-header">
+            <p class="section-eyebrow">About Us</p>
+            <h2 class="section-title">Building Futures Since 1997</h2>
+            <p class="section-description">Located at the foot of Satpura ranges, IMRD provides quality education to students aspiring for excellence in IT and Management.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-content">
+                <h3>Our Legacy</h3>
+                <p>Institute of Management Research and Development, Shirpur is one of the premiere institutes run by the R.C. Patel Educational Trust, Shirpur. Established in 1997, IMRD was created with a vision to provide quality education to students of rural and tribal areas.</p>
+                
+                <h3>Our Mission</h3>
+                <p>To provide quality higher education to students aspiring to develop a global perspective in information technology and management education. We focus on nurturing tomorrow's IT and Management professionals through comprehensive academic programs and industry exposure.</p>
+                
+                <h3>Why Choose IMRD?</h3>
+                <p>With 27+ years of excellence, experienced faculty, modern infrastructure, strong industry connections, and a proven placement track record, IMRD stands as a beacon of quality education in North Maharashtra.</p>
+            </div>
+            <div class="about-image">
+                <span>Campus at Satpura Ranges</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses reveal" id="courses">
+        <div class="section-header">
+            <p class="section-eyebrow">Academic Programs</p>
+            <h2 class="section-title">Choose Your Path</h2>
+            <p class="section-description">Diverse range of UG, PG, and Integrated programs designed for your success</p>
+        </div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <span class="course-icon">💻</span>
+                <h3>Bachelor of Computer Applications</h3>
+                <span class="course-code">BCA</span>
+                <p>Comprehensive 3-year program in computer applications covering programming, software development, database management, and web technologies.</p>
+                <div class="course-meta">
+                    <span class="course-badge">3 Years</span>
+                    <span class="course-badge">₹86,460 - ₹1.5L</span>
+                    <span class="course-badge">60 Seats</span>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-icon">🎓</span>
+                <h3>Master of Computer Applications</h3>
+                <span class="course-code">MCA</span>
+                <p>Advanced 2-year program designed to develop IT professionals ready for industry challenges with focus on latest technologies and research.</p>
+                <div class="course-meta">
+                    <span class="course-badge">2 Years</span>
+                    <span class="course-badge">₹1.87L - ₹2.1L</span>
+                    <span class="course-badge">60 Seats</span>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-icon">📊</span>
+                <h3>Bachelor of Business Administration</h3>
+                <span class="course-code">BBA</span>
+                <p>Comprehensive 3-year management program covering all aspects of business administration, finance, marketing, and human resources.</p>
+                <div class="course-meta">
+                    <span class="course-badge">3 Years</span>
+                    <span class="course-badge">₹56,460 - ₹1L</span>
+                    <span class="course-badge">60 Seats</span>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-icon">📈</span>
+                <h3>Master of Business Administration</h3>
+                <span class="course-code">MBA</span>
+                <p>Premier 2-year management program preparing students for leadership roles with specializations in various domains.</p>
+                <div class="course-meta">
+                    <span class="course-badge">2 Years</span>
+                    <span class="course-badge">₹2.5L</span>
+                    <span class="course-badge">60 Seats</span>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-icon">🔄</span>
+                <h3>BCA + MCA Integrated</h3>
+                <span class="course-code">BCA+MCA</span>
+                <p>Integrated 5-year program combining BCA and MCA for comprehensive IT education with seamless progression.</p>
+                <div class="course-meta">
+                    <span class="course-badge">5 Years</span>
+                    <span class="course-badge">₹25,000/year</span>
+                    <span class="course-badge">30 Seats</span>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-icon">📜</span>
+                <h3>Diploma & Certificate Programs</h3>
+                <span class="course-code">Various</span>
+                <p>Short-term skill development programs in IT and Management for working professionals and students.</p>
+                <div class="course-meta">
+                    <span class="course-badge">6-12 Months</span>
+                    <span class="course-badge">Part Time</span>
+                    <span class="course-badge">Flexible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities reveal" id="facilities">
+        <div class="section-header">
+            <p class="section-eyebrow">Infrastructure</p>
+            <h2 class="section-title">World-Class Facilities</h2>
+            <p class="section-description">Everything you need for holistic development and academic excellence</p>
+        </div>
+        <div class="facilities-grid">
+            <div class="facility-item">
+                <span class="facility-icon">📚</span>
+                <h3>Central Library</h3>
+                <p>10,000+ books and digital resources</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">💻</span>
+                <h3>Computer Labs</h3>
+                <p>250+ systems with latest software</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🏠</span>
+                <h3>Hostel</h3>
+                <p>Comfortable accommodation with security</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">⚽</span>
+                <h3>Sports Complex</h3>
+                <p>Multiple indoor & outdoor sports</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🍽️</span>
+                <h3>Cafeteria</h3>
+                <p>Hygienic and nutritious meals</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🏋️</span>
+                <h3>Gymnasium</h3>
+                <p>Modern equipment with trainers</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🏊</span>
+                <h3>Swimming Pool</h3>
+                <p>Olympic-size pool facility</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🎭</span>
+                <h3>Auditorium</h3>
+                <p>500-seat AC auditorium</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">📡</span>
+                <h3>Wi-Fi Campus</h3>
+                <p>24/7 high-speed connectivity</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🏥</span>
+                <h3>Medical Center</h3>
+                <p>On-campus healthcare facility</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">🚌</span>
+                <h3>Transport</h3>
+                <p>Bus service across routes</p>
+            </div>
+            <div class="facility-item">
+                <span class="facility-icon">💼</span>
+                <h3>Placement Cell</h3>
+                <p>Dedicated career support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placements Section -->
+    <section class="placements reveal" id="placements">
+        <div class="section-header">
+            <p class="section-eyebrow">Placements</p>
+            <h2 class="section-title">Our Success Stories</h2>
+            <p class="section-description">Students placed in leading companies across India</p>
+        </div>
+        <div class="placements-grid">
+            <div class="placement-card">
+                <div class="placement-avatar">VP</div>
+                <h4>Vaishnavi Dnyaneshwar Patil</h4>
+                <p class="placement-company">STQCIT, Pune</p>
+                <p class="placement-package">9.6 LPA</p>
+            </div>
+            <div class="placement-card">
+                <div class="placement-avatar">GB</div>
+                <h4>Gaurav Ravindra Behere</h4>
+                <p class="placement-company">SmartKargo, Pune</p>
+                <p class="placement-package">3.5 LPA</p>
+            </div>
+            <div class="placement-card">
+                <div class="placement-avatar">KJ</div>
+                <h4>Khushi Jain</h4>
+                <p class="placement-company">Accenture, Noida</p>
+                <p class="placement-package">3.45 LPA</p>
+            </div>
+            <div class="placement-card">
+                <div class="placement-avatar">SS</div>
+                <h4>Shashikant Ishwar Shirsath</h4>
+                <p class="placement-company">Paarsh InfoTech, Nashik</p>
+                <p class="placement-package">3 LPA</p>
+            </div>
+            <div class="placement-card">
+                <div class="placement-avatar">MS</div>
+                <h4>Manish Sonawane</h4>
+                <p class="placement-company">Paarsh InfoTech, Nashik</p>
+                <p class="placement-package">3 LPA</p>
+            </div>
+            <div class="placement-card">
+                <div class="placement-avatar">RN</div>
+                <h4>Roshani Yogesh Nikam</h4>
+                <p class="placement-company">JadeGlobal, Pune</p>
+                <p class="placement-package">2.75 LPA</p>
+            </div>
+        </div>
+
+        <div class="recruiters">
+            <h3>Our Recruiting Partners</h3>
+            <div class="recruiters-grid">
+                <div class="recruiter-item">TCS</div>
+                <div class="recruiter-item">Infosys</div>
+                <div class="recruiter-item">Wipro</div>
+                <div class="recruiter-item">Accenture</div>
+                <div class="recruiter-item">Capgemini</div>
+                <div class="recruiter-item">Tech Mahindra</div>
+                <div class="recruiter-item">Cognizant</div>
+                <div class="recruiter-item">IBM</div>
+                <div class="recruiter-item">Amazon</div>
+                <div class="recruiter-item">Flipkart</div>
+                <div class="recruiter-item">HDFC Bank</div>
+                <div class="recruiter-item">ICICI Bank</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section class="admission reveal" id="admission">
+        <div class="section-header">
+            <p class="section-eyebrow">Admissions 2025-26</p>
+            <h2 class="section-title">Start Your Journey</h2>
+            <p class="section-description">Simple and transparent admission process</p>
+        </div>
+        <div class="admission-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Fill Application</h3>
+                <p>Complete the online or offline application form with required details</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Submit Documents</h3>
+                <p>Submit necessary documents including mark sheets and certificates</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Merit List</h3>
+                <p>Check your name in the merit list published on our website</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Counseling</h3>
+                <p>Attend counseling session for course selection and guidance</p>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Fee Payment</h3>
+                <p>Pay admission fees through online or offline mode</p>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <h3>Enrollment</h3>
+                <p>Complete enrollment and start your academic journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery reveal" id="gallery">
+        <div class="section-header">
+            <p class="section-eyebrow">Campus Life</p>
+            <h2 class="section-title">Experience IMRD</h2>
+            <p class="section-description">Glimpses of our vibrant campus and activities</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-overlay">
+                    <h3>Campus Life</h3>
+                    <p>Beautiful campus at Satpura ranges</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-overlay">
+                    <h3>Cultural Fest</h3>
+                    <p>Annual cultural celebrations</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-overlay">
+                    <h3>Sports Events</h3>
+                    <p>Inter-college tournaments</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-overlay">
+                    <h3>Academic Events</h3>
+                    <p>Workshops and seminars</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-overlay">
+                    <h3>Placement Drives</h3>
+                    <p>Top companies visit campus</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-overlay">
+                    <h3>Infrastructure</h3>
+                    <p>Modern labs and facilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact reveal" id="contact">
+        <div class="section-header">
+            <p class="section-eyebrow">Get In Touch</p>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">We're here to help you with any questions</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Address</h3>
+                        <p>Karvand Naka, Taluka – Shirpur<br>District – Dhule (M.S.) 425405</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>+91-2563-251028<br>+91-9881033312 (MCA)</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>rcpimrd@gmail.com<br>vaishali.imrd@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-details">
+                        <h3>Website</h3>
+                        <p>www.rcpimrd.ac.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Interested Course</label>
+                        <select id="course" name="course" required>
+                            <option value="">Select a course</option>
+                            <option value="BCA">BCA</option>
+                            <option value="MCA">MCA</option>
+                            <option value="BBA">BBA</option>
+                            <option value="MBA">MBA</option>
+                            <option value="BCA+MCA">BCA+MCA Integrated</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>IMRD Shirpur</h3>
+                <p>Institute of Management Research and Development, established in 1997, is committed to providing quality education in IT and Management.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/RcpimrdShirpur/" class="social-link" target="_blank">📘</a>
+                    <a href="https://in.linkedin.com/company/rcpet-s-institute-of-management-research-and-development-shirpur" class="social-link" target="_blank">💼</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#placements">Placements</a></li>
+                    <li><a href="#admission">Admissions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://www.rcpimrd.ac.in/prospectus" target="_blank">Prospectus</a></li>
+                    <li><a href="https://www.rcpimrd.ac.in/admission" target="_blank">Apply Online</a></li>
+                    <li><a href="https://rcpimrdmoodle.gnomio.com/" target="_blank">Moodle Login</a></li>
+                    <li><a href="https://www.rcpimrd.ac.in/alumni-association" target="_blank">Alumni</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Karvand Naka, Shirpur</li>
+                    <li>Dhule (M.S.) 425405</li>
+                    <li>+91-2563-251028</li>
+                    <li>rcpimrd@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 IMRD Shirpur. All rights reserved. | Designed with ❤️ for Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Check on load
+
+        // Form submission handler
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            // For now, we'll just show an alert
+            alert('Thank you for your interest! We will contact you soon.\n\nName: ' + data.name + '\nEmail: ' + data.email);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add loading animation to elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate stats on scroll
+            const stats = document.querySelectorAll('.stat-number');
+            
+            const animateValue = (element, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    
+                    // Handle decimals for package amounts
+                    if (element.textContent.includes('.')) {
+                        element.textContent = value.toFixed(1);
+                    } else {
+                        element.textContent = value;
+                    }
+                    
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const endValue = parseFloat(target.textContent);
+                        animateValue(target, 0, endValue, 2000);
+                        observer.unobserve(target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => observer.observe(stat));
+        });
+
+        // Add hover effect to course cards
+        const courseCards = document.querySelectorAll('.course-card');
+        courseCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Placement card animations
+        const placementCards = document.querySelectorAll('.placement-card');
+        placementCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Gallery item interaction
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // You can add lightbox functionality here
+                const title = this.querySelector('.gallery-overlay h3').textContent;
+                console.log('Gallery item clicked:', title);
+            });
+        });
+
+        // Add typing effect to hero subtitle
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (heroSubtitle) {
+            const text = heroSubtitle.textContent;
+            heroSubtitle.textContent = '';
+            let i = 0;
+            
+            const typeWriter = () => {
+                if (i < text.length) {
+                    heroSubtitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 500);
+        }
+
+        // Facility items stagger animation
+        const facilityItems = document.querySelectorAll('.facility-item');
+        const facilityObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 50);
+                    facilityObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        facilityItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'all 0.5s ease';
+            facilityObserver.observe(item);
+        });
+
+        // Add cursor trail effect (optional premium touch)
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Responsive mobile menu
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+
+        // Admission step highlight on scroll
+        const steps = document.querySelectorAll('.step');
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out both';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        steps.forEach(step => stepObserver.observe(step));
+
+        // Add gradient animation to hero background
+        const hero = document.querySelector('.hero::before');
+        let gradientAngle = 135;
+        
+        setInterval(() => {
+            gradientAngle = (gradientAngle + 1) % 360;
+        }, 50);
+
+        // Preload images for better performance
+        const imageUrls = [
+            // Add your image URLs here when you have them
+        ];
+
+        imageUrls.forEach(url => {
+            const img = new Image();
+            img.src = url;
+        });
+
+        console.log('IMRD Shirpur Website Loaded Successfully! 🎓');
+        console.log('Visit: https://www.rcpimrd.ac.in for more information');
+    </script>
+</body>
+</html>
